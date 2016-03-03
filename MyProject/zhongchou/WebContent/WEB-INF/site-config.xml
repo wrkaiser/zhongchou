@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN" "http://struts.apache.org/dtds/struts-config_1_3.dtd">
+<struts-config>
+   <form-beans >
+         <form-bean name="muserform" type="com.sys.form.MUserForm" />
+                    <form-bean name="commontypeform" type="com.sys.form.CommonTypeForm" />
+                    <form-bean name="sysmenuform" type="com.sys.form.SysMenuForm"></form-bean>
+                    <form-bean name="roleform" type="com.sys.form.SysRoleForm"></form-bean>
+                     <form-bean name="documentform" type="com.sys.form.DocumentForm"></form-bean>
+                       <form-bean name="questionform" type="com.sys.form.QuestionForm"></form-bean>
+                       <form-bean name="productform" type="com.sys.form.ProductForm"></form-bean>
+                         <form-bean name="vcourseform" type="com.sys.form.VCourseForm"></form-bean>
+                       <form-bean name="messageform" type="com.sys.form.MessageForm"></form-bean>
+                        <form-bean name="uploadform" type="com.sys.form.UploadForm"></form-bean>
+                         <form-bean name="sysuserform" type="com.sys.form.SysUserForm"></form-bean>
+                          <form-bean name="luyanform" type="com.sys.form.LuYanForm"></form-bean>
+                        
+  </form-beans>
+    
+     
+  <action-mappings>
+       <action  
+        name="luyanform" 
+        scope="request"  
+        parameter="m"
+        path="/back/luyan"
+        type="com.xiaoyou.action.LuYanAction" > 
+         <forward name="pros" path="/back/pro/pros.jsp" />
+      </action>
+     <action
+      name="muserform"
+      scope="request"
+      parameter="m"
+      path="/mem"
+      type="com.sys.action.UserAction">
+      <forward name="reg" path="/reg.jsp" />
+      <forward name="login" path="/back/log.jsp" />
+      <forward name="success" path="/back/main.jsp" />
+       <forward name="baseinfo" path="/back/user.jsp" />
+        <forward name="changepass" path="/back/modifypwd.jsp" />
+     </action>
+        
+      <action
+      name="commontypeform"
+      scope="request"
+      parameter="m"
+      path="/back/commontype"
+      type="com.sys.action.CommonTypeAction">
+         <forward name="detail" path="/back/commontype/add.jsp" />
+        <forward name="list" path="/back/commontype/list.jsp" />
+     </action>
+     
+      <action
+      name="commontypeform"
+      scope="request"
+      parameter="m"
+      path="/back/commonctype"
+      type="com.sys.action.CommonCTypeAction">
+         <forward name="detail" path="/back/commonctype/add.jsp" />
+        <forward name="list" path="/back/commonctype/list.jsp" />
+     </action>
+        <action
+      name="sysuserform"
+      scope="request"
+      parameter="m"
+      path="/back/user"
+      type="com.sys.action.SysUserAction">
+         <forward name="detail" path="/back/user/add.jsp" />
+        <forward name="list" path="/back/user/list.jsp" />
+     </action>
+     
+     <!-- 菜单管理 -->
+		<action path="/back/menu" 
+		        type="com.sys.action.SysMenuAction"
+		        name="sysmenuform"
+		        scope="request"
+		        parameter="m"
+		>
+		<forward name="list" path="/back/menu/menulist.jsp"></forward>
+		<forward name="select" path="/back/menu/rightmenulist.jsp"></forward>
+		<forward name="select1" path="/back/menu/selectmenu.jsp"></forward>
+		<forward name="rightmenulist" path="/back/menu/rightmenulist.jsp"></forward>
+		</action>   
+		<!-- 角色管理 -->
+		<action path="/back/role" 
+		        type="com.sys.action.SysRoleAction"
+		        name="roleform"
+		        scope="request"
+		        parameter="m"
+		>
+		<forward name="list" path="/back/role/rolelist.jsp"></forward>
+		<forward name="add" path="/back/role/roleadd.jsp"></forward>
+		<forward name="select" path="/back/role/selectrole.jsp"></forward>
+		
+		</action>   
+      <action
+      name="documentform"
+      scope="request"
+      parameter="m"
+      path="/back/doc"
+      type="com.sys.action.DocumentAction">
+         <forward name="detail" path="/back/doc/add.jsp" />
+        <forward name="list" path="/back/doc/list.jsp" />
+     </action>
+       <action
+      name="questionform"
+      scope="request"
+      parameter="m"
+      path="/back/quest"
+      type="com.sys.action.QuestionAction">
+         <forward name="detail" path="/back/quest/add.jsp" />
+        <forward name="list" path="/back/quest/list.jsp" />
+     </action>
+     <action
+      name="productform"
+      scope="request"
+      parameter="m"
+      path="/back/product"
+      type="com.sys.action.ProductAction">
+         <forward name="detail" path="/back/product/add.jsp" />
+        <forward name="list" path="/back/product/list.jsp" />
+     </action>
+      <action
+      name="vcourseform"
+      scope="request"
+      parameter="m"
+      path="/back/vcourse"
+      type="com.sys.action.VCourseAction">
+         <forward name="detail" path="/back/course/vadd.jsp" />
+        <forward name="list" path="/back/course/vlist.jsp" />
+     </action>
+      <action
+      name="messageform"
+      scope="request"
+      parameter="m"
+      path="/back/msg"
+      type="com.sys.action.MessageAction">
+         <forward name="detail" path="/back/msg/add.jsp" />
+        <forward name="list" path="/back/msg/list.jsp" />
+     </action>
+     
+     <!-- 上传文件 -->
+		<action path="/upload" 
+		        type="com.sys.action.UploadAction"
+		        scope="request"
+		        parameter="m"
+		/>
+		
+</action-mappings>
+</struts-config>
+

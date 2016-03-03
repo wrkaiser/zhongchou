@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="utf-8">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>微哇微信智能平台</title>
+<link rel="stylesheet" href="http://img1.huixuer.com/static/css/type.css" />
+</head>
+<script type="text/javascript" src="http://img1.huixuer.com/js/jQuery.js?2013-12-18-1"></script>
+<script src="http://img1.huixuer.com/js/jquery.kinMaxShow-1.1.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(function(){
+	
+	$("#kinMaxShow").kinMaxShow({
+			//设置焦点图高度(单位:像素) 必须设置 否则使用默认值 500
+			height:500,
+			//设置焦点图 按钮效果
+			button:{
+			    //设置按钮上面不显示数字索引(默认也是不显示索引)
+                            showIndex:false,
+			    //按钮常规下 样式设置 ，css写法，类似jQuery的 $('xxx').css({key:value,……})中css写法。            
+			    //【友情提示：可以设置透明度哦 不用区分浏览器 统一为 opacity，CSS3属性也支持哦 如：设置按钮圆角、投影等，只不过IE8及以下不支持】            
+                            normal:{background:'url(http://img1.huixuer.com/static/images/button.png) no-repeat -14px 0',marginRight:'8px',border:'0',right:'44%',bottom:'20px'},
+                            //当前焦点图按钮样式 设置，写法同上
+                            focus:{background:'url(http://img1.huixuer.com/static/images/button.png) no-repeat 0 0',border:'0'}
+			},
+			//焦点图切换回调，每张图片淡入、淡出都会调用。并且传入2个参数(index,action)。index 当前图片索引 0为第一张图片，action 切入 或是 切出 值:fadeIn或fadeOut
+			//函数内 this指向 当前图片容器对象 可用来操作里面元素。本例中的焦点图动画主要就是靠callback实现的。
+			callback:function(index,action){
+				switch(index){
+					case 0 :
+							if(action=='fadeIn'){
+								$(this).find('.sub_1_1').animate({left:'70px'},600)
+								$(this).find('.sub_1_2').animate({top:'60px'},600)
+								
+							}else{
+								$(this).find('.sub_1_1').animate({left:'110px'},600)
+								$(this).find('.sub_1_2').animate({top:'120px'},600)
+								
+							};
+							break;
+							
+					case 1 :
+							if(action=='fadeIn'){
+								$(this).find('.sub_2_1').animate({left:'-100px'},600)
+								$(this).find('.sub_2_2').animate({top:'60px'},600)
+							}else{
+								$(this).find('.sub_2_1').animate({left:'-160px'},600)	
+								$(this).find('.sub_2_2').animate({top:'20px'},600)
+							};
+							break;
+							
+					case 2 :
+							if(action=='fadeIn'){
+								$(this).find('.sub_3_1').animate({right:'350px'},600)
+								$(this).find('.sub_3_2').animate({left:'180px'},600)
+							}else{
+								$(this).find('.sub_3_1').animate({right:'180px'},600)	
+								$(this).find('.sub_3_2').animate({left:'30px'},600)
+							};
+							break;											
+					
+				}
+			}
+		
+		});
+
+
+});
+
+</script>
+<style type="text/css">
+
+    #kinMaxShow{display:none;}
+    #kinMaxShow .sub_1_1{ display:block; position:absolute;left:110px; top:136px;}
+    #kinMaxShow .sub_1_2{ display:block; position:absolute;left:110px; top:120px;}
+    
+    #kinMaxShow .sub_2_1{ display:block; position:absolute;left:-160px; bottom:0px;}
+    #kinMaxShow .sub_2_2{ display:block; position:absolute;left:110px; top:20px;}
+    
+    #kinMaxShow .sub_3_1{ display:block; position:absolute;right:180px; bottom:0px;}
+    #kinMaxShow .sub_3_2{ display:block; position:absolute;left:30px; top:40px;}
+
+
+</style>
+<body>
+<div class="tops">
+  <div class="tops_main">
+     <a href="#"><img src="http://img1.huixuer.com/static/images/wx11_04.png" /></a>
+     <div class="fr banner">
+        <ul>
+          <li class="select"><A href="#">首页</A></li><li><A href="#">经典案例</A></li><li><A href="#">渠道代理</A></li><li><A href="#">功能介绍</A></li><li class="arr"><A href="#">登陆</A></li><li  class="arr"><A href="#">注册</A></li><li class="arr"><A href="#">帮助</A></li>
+        </ul>
+     </div>
+  </div>
+</div>
+<div class="scroll">
+  <div id="kinMaxShow">
+    <div>
+	<!--这是焦点图大图图片，下面为动画元素所需图片-->
+        <img src="http://img1.huixuer.com/static/images/demo_extend_images/1.jpg"   />
+	<!--如果需要附加内容在焦点图内部 需要用一个div包裹起来，如下面标红div所示，否则kinMaxShow会解析混乱-->     
+        <div>
+            <img class="sub_1_1" src="http://img1.huixuer.com/static/images/demo_extend_images/sub_1_1.png"  />
+            <img class="sub_1_2" src="http://img1.huixuer.com/static/images/demo_extend_images/sub_1_2.png" usemap="#Map_1_2"  border="0" />
+	     <!--此处焦点图上面的局部链接 可不用图片热区链接，可用普通a链接实现，偷个懒 (: -->            
+            <map name="Map_1_2" id="Map_1_2">
+            <area shape="rect" coords="2,96,106,123" href="#" target="_blank"/>
+            </map>
+        </div>
+    </div>
+    
+    <div>
+        <img src="http://img1.huixuer.com/static/images/demo_extend_images/2.jpg"  />
+        <div>
+            <img class="sub_2_1" src="http://img1.huixuer.com/static/images/demo_extend_images/sub_2_1.png"  />
+            <img class="sub_2_2" src="http://img1.huixuer.com/static/images/demo_extend_images/sub_2_2.png" usemap="#Map_2_2"  border="0" />
+            <map name="Map_2_2" id="Map_2_2">
+              <area shape="rect" coords="3,97,104,124" href="#" target="_blank"/>
+            </map>                
+        </div>            
+    </div>
+    
+    <div>
+        <img src="http://img1.huixuer.com/static/images/demo_extend_images/3.jpg"   />
+        <div>
+            <img class="sub_3_1" src="http://img1.huixuer.com/static/images/demo_extend_images/sub_3_1.png"  />
+            <img class="sub_3_2" src="http://img1.huixuer.com/static/images/demo_extend_images/sub_3_2.png" usemap="#Map_3_2"  border="0" />
+            <map name="Map_3_2" id="Map_3_2">
+              <area shape="rect" coords="1,98,106,124" href="http://www.lanrentuku.com" target="_blank"/>
+            </map>                    
+        </div>
+    </div>
+</div>
+
+
+</div>
+<div class="mains">
+  
+  <div class="titlesa">
+    <span class="newinfo">最新消息</span>
+    <span class="new_list"><i>●</i>微哇智能平台搭建自己的微信app<b><img src="http://img1.huixuer.com/static/images/icon_new.png" /></b></span><span class="new_list"><i>●</i>预祝大家新年快乐心想事成<b><img src="http://img1.huixuer.com/static/images/icon_new.png" /></b></span>
+  </div>
+  
+  <div class="s_intro">
+    <img src="http://img1.huixuer.com/static/images/wx11_12.jpg" /><img src="http://img1.huixuer.com/static/images/wx11_15.jpg" /><img src="http://img1.huixuer.com/static/images/wx11_18.jpg" /><img src="http://img1.huixuer.com/static/images/wx11_21.jpg" />
+  </div>
+  
+  <div class="s_tt">
+    成功案例
+  </div>
+  <div class="s_down">
+   
+      <div class="case_z">
+      <div class="big_pic"><img src="http://img1.huixuer.com/static/images/demo/517789d74f8a4.jpg" width="140" height="140">
+        <div class="erwei" style="bottom: -50px; display: none;"><img src="http://img1.huixuer.com/static/images/demo/519592e5b8d25.jpg"></div>
+      </div>
+      <div class="sm_pic"> <img src="http://img1.huixuer.com/static/images/demo/517789d74f8a4.jpg" width="45" height="45">
+        <div class="sm_pic_txt">
+          <h3>锅爱米浪漫相约交友平台</h3>
+          <p>语音交友，真实交友，声讯聊天，浪漫相约，尽在爱米网。 www.guoaimi.com</p>
+        </div>
+        <div class="clear"></div>
+      </div>
+    </div><div class="case_z">
+      <div class="big_pic"><img src="http://img1.huixuer.com/static/images/demo/518de85c912ac.jpg" width="140" height="140">
+        <div class="erwei" style="bottom: -50px; display: none;"><img src="http://img1.huixuer.com/static/images/demo/518de85c9262f.jpg"></div>
+      </div>
+      <div class="sm_pic"> <img src="http://img1.huixuer.com/static/images/demo/518de85c912ac.jpg" width="45" height="45">
+        <div class="sm_pic_txt">
+          <h3>唐山森马旗舰店</h3>
+          <p>森马唐山旗舰店，地址：路南区新华西道24号，近4000平的购物面积，每季度超过5000个款式的服装，欢迎您的光临！</p>
+        </div>
+        <div class="clear"></div>
+      </div>
+    </div><div class="case_z">
+      <div class="big_pic"><img src="http://img1.huixuer.com/static/images/demo/5195a28d1b1d3.jpg" width="140" height="140">
+        <div class="erwei"><img src="http://img1.huixuer.com/static/images/demo/5195a28d1c55a.jpg"></div>
+      </div>
+      <div class="sm_pic"> <img src="http://img1.huixuer.com/static/images/demo/5195a28d1b1d3.jpg" width="45" height="45">
+        <div class="sm_pic_txt">
+          <h3>通化金大福珠宝店</h3>
+          <p>通化金大福珠宝在款式、整合、营销等方面成绩显著，引起购买者的广泛关注。自组建以来，通化金大福珠宝通过品牌深厚的渊源、独特的寓意、精湛的技艺、以及热情的服务吸引了众多消费者的眼球。</p>
+        </div>
+        <div class="clear"></div>
+      </div>
+    </div><div class="case_z" style="margin-right:0">
+      <div class="big_pic"><img src="http://img1.huixuer.com/static/images/demo/51a444d5a953a.jpg" width="140" height="140">
+        <div class="erwei"><img src="http://img1.huixuer.com/static/images/demo/51a444d5aad24.jpg"></div>
+      </div>
+      <div class="sm_pic"> <img src="http://img1.huixuer.com/static/images/demo/51a444d5a953a.jpg" width="45" height="45">
+        <div class="sm_pic_txt">
+          <h3>MAXCO美能格</h3>
+          <p>关注美能格，即时了解美能格移动电源，简约不简单</p>
+        </div>
+        <div class="clear"></div>
+      </div>
+    </div><div class="case_z">
+      <div class="big_pic"><img src="http://img1.huixuer.com/static/images/demo/51a6b55668f90.png" width="140" height="140">
+        <div class="erwei"><img src="http://img1.huixuer.com/static/images/demo/51a6b55671214.jpg"></div>
+      </div>
+      <div class="sm_pic"> <img src="http://img1.huixuer.com/static/images/demo/51a6b55668f90.png" width="45" height="45">
+        <div class="sm_pic_txt">
+          <h3>蓝天旅游</h3>
+          <p>旅游咨询、长线短线出游报名、各种活动、线路
+竞拍一切由你掌握！</p>
+        </div>
+        <div class="clear"></div>
+      </div>
+    </div><div class="case_z">
+      <div class="big_pic"><img src="http://img1.huixuer.com/static/images/demo/51a892b4b7f3e.jpg" width="140" height="140">
+        <div class="erwei" style="bottom: -50px; display: none;"><img src="http://img1.huixuer.com/static/images/demo/51a892b4bfaa4.jpg"></div>
+      </div>
+      <div class="sm_pic"> <img src="http://img1.huixuer.com/static/images/demo/51a892b4b7f3e.jpg" width="45" height="45">
+        <div class="sm_pic_txt">
+          <h3>阳澄湖蟹霸仙</h3>
+          <p>送礼、单位团购、个人零购、请选‘蟹湖湾’‘蟹友汇’阳澄湖大闸蟹
+阳澄湖蟹霸仙官网  http://www.ychxbx.com
+全国统一服务热线：400-6832-788
+EMIL：ychxbx@163.com</p>
+        </div>
+        <div class="clear"></div>
+      </div>
+    </div><div class="case_z">
+      <div class="big_pic"><img src="http://img1.huixuer.com/static/images/demo/51addd73a2565.jpg" width="140" height="140">
+        <div class="erwei"><img src="http://img1.huixuer.com/static/images/demo/51addd73a46ce.jpg"></div>
+      </div>
+      <div class="sm_pic"> <img src="http://img1.huixuer.com/static/images/demo/51addd73a2565.jpg" width="45" height="45">
+        <div class="sm_pic_txt">
+          <h3>领秀造型专业美发连锁</h3>
+          <p>关注领秀造型专业美发，免费参与微信抽大奖， 观看最新潮流资讯，新闻发布。 官方网址 http://www.lingxiuzaoxing.com/ 美丽热线 13378378484</p>
+        </div>
+        <div class="clear"></div>
+      </div>
+    </div><div class="case_z" style="margin-right:0">
+      <div class="big_pic"><img src="http://img1.huixuer.com/static/images/demo/51bfe579be173.jpg" width="140" height="140">
+        <div class="erwei"><img src="http://img1.huixuer.com/static/images/demo/51bfe579bf9d2.jpg"></div>
+      </div>
+      <div class="sm_pic"> <img src="http://img1.huixuer.com/static/images/demo/51bfe579be173.jpg" width="45" height="45">
+        <div class="sm_pic_txt">
+          <h3>森舟集团</h3>
+          <p>香港森舟一帆风顺绿色原生态星级酒店，汇聚绿色原生态饮食文化与南北菜品制作方法，依傍长白山自然天成美景，打造“真诚务实，团队协作，追求完美，绿色服务，家的温暖”的客房服务理念，让每一位顾客，在静享长白山绿色原生态菜品的同时，更能饱览长白山美景，品读香港森舟集团的文化，体验香港森舟一帆风顺酒店舒适如家的住宿环境，为八方好友提供一次长白山原生态的绿色旅程。</p>
+        </div>
+        <div class="clear"></div>
+      </div>
+    </div><div class="case_z">
+      <div class="big_pic"><img src="http://img1.huixuer.com/static/images/demo/51c3f6ad2c34c.jpg" width="140" height="140">
+        <div class="erwei"><img src="http://img1.huixuer.com/static/images/demo/51c3f6ad2d9c6.jpg"></div>
+      </div>
+      <div class="sm_pic"> <img src="http://img1.huixuer.com/static/images/demo/51c3f6ad2c34c.jpg" width="45" height="45">
+        <div class="sm_pic_txt">
+          <h3>豆芽网</h3>
+          <p>豆芽网，douya.cn母婴购物分享平台官方微信</p>
+        </div>
+        <div class="clear"></div>
+      </div>
+    </div><div class="case_z">
+      <div class="big_pic"><img src="http://img1.huixuer.com/static/images/demo/51c7d7f91a6de.jpg" width="140" height="140">
+        <div class="erwei"><img src="http://img1.huixuer.com/static/images/demo/51c7d7f91ca59.jpg"></div>
+      </div>
+      <div class="sm_pic"> <img src="http://img1.huixuer.com/static/images/demo/51c7d7f91a6de.jpg" width="45" height="45">
+        <div class="sm_pic_txt">
+          <h3>车蚂蚁北京站</h3>
+          <p>车蚂蚁北京站是车蚂蚁汽车服务平台专门为北京车主提供的一个进行汽车服务的站点。</p>
+        </div>
+        <div class="clear"></div>
+      </div>
+    </div><div class="case_z">
+      <div class="big_pic"><img src="http://img1.huixuer.com/static/images/demo/51c947ce101bc.png" width="140" height="140">
+        <div class="erwei"><img src="http://img1.huixuer.com/static/images/demo/51c947ce12570.jpg"></div>
+      </div>
+      <div class="sm_pic"> <img src="http://img1.huixuer.com/static/images/demo/51c947ce101bc.png" width="45" height="45">
+        <div class="sm_pic_txt">
+          <h3>哈尔滨GAGA娱乐有限公司</h3>
+          <p>哈尔滨GAGA娱乐有限公司专属打造主题量贩式KTV连锁机构，不断引领娱乐界的新潮流。前卫与时尚交融，简约与奢华并存，顶级完美的硬件设施，让您感受最具震撼力的视觉与听觉冲击。</p>
+        </div>
+        <div class="clear"></div>
+      </div>
+    </div><div class="case_z" style="margin-right:0">
+      <div class="big_pic"><img src="http://img1.huixuer.com/static/images/demo/51cdd884877a7.jpg" width="140" height="140">
+        <div class="erwei"><img src="http://img1.huixuer.com/static/images/demo/51cdd88490c5f.jpg"></div>
+      </div>
+      <div class="sm_pic"> <img src="http://img1.huixuer.com/static/images/demo/51cdd884877a7.jpg" width="45" height="45">
+        <div class="sm_pic_txt">
+          <h3>瑟安竜摄影工作室</h3>
+          <p>重庆最受欢迎的摄影师---小竜，为您量身定做摄影计划，以透清凉的清新摄影风格，独领于重庆摄影界。地址：江北观音桥北城旺角A栋14-4，小竜PH：13708214427</p>
+        </div>
+        <div class="clear"></div>
+      </div>
+    </div><div class="case_z">
+      <div class="big_pic"><img src="http://img1.huixuer.com/static/images/demo/51d23d7fc4507.png" width="140" height="140">
+        <div class="erwei"><img src="http://img1.huixuer.com/static/images/demo/51d23d7fc5ad4.jpg"></div>
+      </div>
+      <div class="sm_pic"> <img src="http://img1.huixuer.com/static/images/demo/51d23d7fc4507.png" width="45" height="45">
+        <div class="sm_pic_txt">
+          <h3>大米包装设计</h3>
+          <p>胜格工作室是以粮油企业为主要服务对象的专业品牌服务机构。2001年成立以来一直专注大米包装设计、大米产品形象系统（PIS）设计、企业形象（VIS）设计等品牌服务。</p>
+        </div>
+        <div class="clear"></div>
+      </div>
+    </div><div class="case_z">
+      <div class="big_pic"><img src="http://img1.huixuer.com/static/images/demo/51fb5059578e1.jpg" width="140" height="140">
+        <div class="erwei"><img src="http://img1.huixuer.com/static/images/demo/52006571d29ca.jpg"></div>
+      </div>
+      <div class="sm_pic"> <img src="http://img1.huixuer.com/static/images/demo/51fb5059578e1.jpg" width="45" height="45">
+        <div class="sm_pic_txt">
+          <h3>蓝海科技</h3>
+          <p>蓝海科技作为国内领先的电子商务整体解决方案供应商，致力于在电商培训、电商解决方案、电商软件平台开发、电商整体托管运营等方面为客户提供系统性、一站式服务。</p>
+        </div>
+        <div class="clear"></div>
+      </div>
+    </div><div class="case_z">
+      <div class="big_pic"><img src="http://img1.huixuer.com/static/images/demo/51d39e2c148fa.jpg" width="140" height="140">
+        <div class="erwei"><img src="http://img1.huixuer.com/static/images/demo/51d39e2c18996.jpg"></div>
+      </div>
+      <div class="sm_pic"> <img src="http://img1.huixuer.com/static/images/demo/51d39e2c148fa.jpg" width="45" height="45">
+        <div class="sm_pic_txt">
+          <h3>三水恒福广场</h3>
+          <p></p>
+        </div>
+        <div class="clear"></div>
+      </div>
+    </div><div class="case_z" style="margin-right:0">
+      <div class="big_pic"><img src="http://img1.huixuer.com/static/images/demo/51d38484d094b.jpg" width="140" height="140">
+        <div class="erwei"><img src="http://img1.huixuer.com/static/images/demo/51d38484d1d83.jpg"></div>
+      </div>
+      <div class="sm_pic"> <img src="http://img1.huixuer.com/static/images/demo/51d38484d094b.jpg" width="45" height="45">
+        <div class="sm_pic_txt">
+          <h3>广州钟爱一生婚纱摄影</h3>
+          <p>广州钟爱一生婚纱摄影官方微信</p>
+        </div>
+        <div class="clear"></div>
+      </div>
+    </div><div class="case_z">
+      <div class="big_pic"><img src="http://img1.huixuer.com/static/images/demo/51e22494a9a6b.jpg" width="140" height="140">
+        <div class="erwei"><img src="http://img1.huixuer.com/static/images/demo/51d7a8200e9df.jpg"></div>
+      </div>
+      <div class="sm_pic"> <img src="http://img1.huixuer.com/static/images/demo/51e22494a9a6b.jpg" width="45" height="45">
+        <div class="sm_pic_txt">
+          <h3>张裕先锋国际酒庄逸香汇会所</h3>
+          <p></p>
+        </div>
+        <div class="clear"></div>
+      </div>
+    </div><div class="case_z">
+      <div class="big_pic"><img src="http://img1.huixuer.com/static/images/demo/51d91d609785a.jpg" width="140" height="140">
+        <div class="erwei"><img src="http://img1.huixuer.com/static/images/demo/51d91d6098eaa.jpg"></div>
+      </div>
+      <div class="sm_pic"> <img src="http://img1.huixuer.com/static/images/demo/51d91d609785a.jpg" width="45" height="45">
+        <div class="sm_pic_txt">
+          <h3>延吉新里程奥迪</h3>
+          <p>奥迪汽车4S店</p>
+        </div>
+        <div class="clear"></div>
+      </div>
+    </div><div class="case_z">
+      <div class="big_pic"><img src="http://img1.huixuer.com/static/images/demo/51e3726e04310.jpg" width="140" height="140">
+        <div class="erwei"><img src="http://img1.huixuer.com/static/images/demo/51e3726e071eb.jpg"></div>
+      </div>
+      <div class="sm_pic"> <img src="http://img1.huixuer.com/static/images/demo/51e3726e04310.jpg" width="45" height="45">
+        <div class="sm_pic_txt">
+          <h3>织金购物站</h3>
+          <p>织金购物站</p>
+        </div>
+        <div class="clear"></div>
+      </div>
+    </div><div class="case_z" style="margin-right:0">
+      <div class="big_pic"><img src="http://img1.huixuer.com/static/images/demo/52687438a096c.jpg" width="140" height="140">
+        <div class="erwei"><img src="http://img1.huixuer.com/static/images/demo/51e75b0f2ff80.jpg"></div>
+      </div>
+      <div class="sm_pic"> <img src="http://img1.huixuer.com/static/images/demo/52687438a096c.jpg" width="45" height="45">
+        <div class="sm_pic_txt">
+          <h3>恒顺国旅</h3>
+          <p>恒顺国旅—您贴心的旅行顾问。我们将竭诚为您提供机票、酒店、旅游、会务等专业旅行服务。网址：www.homsom.com 全国服务热线：4006-123-123</p>
+        </div>
+        <div class="clear"></div>
+      </div>
+    </div><div class="case_z">
+      <div class="big_pic"><img src="http://img1.huixuer.com/static/images/demo/51e8f2996528c.jpg" width="140" height="140">
+        <div class="erwei"><img src="http://img1.huixuer.com/static/images/demo/51e8f2996b5d7.jpg"></div>
+      </div>
+      <div class="sm_pic"> <img src="http://img1.huixuer.com/static/images/demo/51e8f2996528c.jpg" width="45" height="45">
+        <div class="sm_pic_txt">
+          <h3>大视野品牌设计</h3>
+          <p>中国大视野广告，广东省最具影响力品牌策划公司，中国十大策划人单位，10年来坚持原创设计、专注品牌整合，存在只为创造，做品牌强国的推手！400-679-8869， www.seaskyadv.com</p>
+        </div>
+        <div class="clear"></div>
+      </div>
+    </div><div class="case_z">
+      <div class="big_pic"><img src="http://img1.huixuer.com/static/images/demo/51f35d19afdb1.jpg" width="140" height="140">
+        <div class="erwei"><img src="http://img1.huixuer.com/static/images/demo/51f35d19b22d0.jpg"></div>
+      </div>
+      <div class="sm_pic"> <img src="http://img1.huixuer.com/static/images/demo/51f35d19afdb1.jpg" width="45" height="45">
+        <div class="sm_pic_txt">
+          <h3>徐州比格自助餐厅</h3>
+          <p>比格餐厅是经营大众化西餐的意式休闲餐厅。以自助比萨为主，兼营零点及外卖。精致美味、丰富多样的百余款食品供顾客随意盛取不限量。徐州市中心店、矿大店、沛县店、新沂店。</p>
+        </div>
+        <div class="clear"></div>
+      </div>
+    </div><div class="case_z">
+      <div class="big_pic"><img src="http://img1.huixuer.com/static/images/demo/51f9d147d96e6.jpg" width="140" height="140">
+        <div class="erwei"><img src="http://img1.huixuer.com/static/images/demo/52ad6dffe4302.jpg"></div>
+      </div>
+      <div class="sm_pic"> <img src="http://img1.huixuer.com/static/images/demo/51f9d147d96e6.jpg" width="45" height="45">
+        <div class="sm_pic_txt">
+          <h3>天美国际美甲学院</h3>
+          <p>深圳市罗湖区天美美甲职业技能培训中心创业十六年，拥有中国设施最全，规模最大，师资力量最强的美甲教育平台。</p>
+        </div>
+        <div class="clear"></div>
+      </div>
+    </div><div class="case_z" style="margin-right:0">
+      <div class="big_pic"><img src="http://img1.huixuer.com/static/images/demo/51fa1f3a86373.png" width="140" height="140">
+        <div class="erwei"><img src="http://img1.huixuer.com/static/images/demo/51fa1f3a87dfd.jpg"></div>
+      </div>
+      <div class="sm_pic"> <img src="http://img1.huixuer.com/static/images/demo/51fa1f3a86373.png" width="45" height="45">
+        <div class="sm_pic_txt">
+          <h3>青岛啤酒百年永恒</h3>
+          <p></p>
+        </div>
+        <div class="clear"></div>
+      </div>
+    </div>  
+     
+  </div>
+  
+</div>
+
+<div id="footer">    <span>      <a target="_blank" href="#">关于腾讯</a> |       <a target="_blank" href="#">服务协议</a> |       <a target="_blank" href="#">客服中心</a> |       <a href="#" target="_blank">在线客服</a> |       <a target="_blank" href="mailto:weixinmp@qq.com">联系邮箱</a> |       <a target="_blank" href="#">侵权投诉</a>     </span>  <span>Copyright © 2012-2013 Weiwa. All Rights Reserved.</span></div>
+</body>
+</html>

@@ -1,0 +1,13 @@
+/*
+*/
+.ke-icon-preview {
+	background-image: url(default/default.gif);
+	background-position: 0px -16px;
+	width: 16px;
+	height: 16px;
+}
+.ke-icon-attach{
+	background-image: url(default/attach.png);
+	width: 16px;
+	height: 16px;
+}

@@ -1,0 +1,62 @@
+@charset "utf-8";
+.launch-tit{width: 892px;height: 48px;margin:39px auto 25px;}
+.launch-tit li{float:left;font-size: 13px;text-align:center;}
+.launch-tit li a{float:left;width: 55px;height:52px;padding-right:114px;background:url(../images/launch/launch-tit.png);text-indent:-999em;cursor:default}
+
+.launch-tit li a.base{padding-right:118px;background-position:0 0;}
+.launch-tit li a.business{padding-right:102px;background-position:-173px 0;}
+.launch-tit li a.team{background-position:-330px 0;}
+.launch-tit li a.company{background-position:-499px 0;}
+.launch-tit li a.financing{background-position:-668px 0;}
+.launch-tit li a.profit{padding-right:0;background-position:-837px 0;}
+.launch-tit li.selected a.base{background-position:0 -55px;}
+.launch-tit li.selected a.business{background-position:-173px -55px;}
+.launch-tit li.selected a.team{background-position:-330px -55px;}
+.launch-tit li.selected a.company{background-position:-499px -55px;}
+.launch-tit li.selected a.financing{background-position:-668px -55px;}
+.launch-tit li.selected a.profit{background-position:-837px -55px;}
+.launch{padding:0 32px 50px;background-color: #fff;border-radius:5px}
+.launch .tit{padding-top: 16px;line-height:1;}
+.launch .tit h2{font-size: 18px;padding-top:8px;float:left;}
+.launch .tit .btns{float:right;font-size: 13px;padding-bottom: 12px;}
+.launch .tit .btns a{margin-right: 10px;}
+.launch-list-tit{background-color:#eaeef1;color:#333;height: 45px;line-height: 45px;margin-bottom: 10px;text-align:center;font-size: 14px;/*position:relative;*/}
+.launch-list-tit span{/*position:absolute;left:0;top:0;*/color:#748599;padding:0 16px;font-size: 13px;background-color:#2e3741;display:none;}
+.launch-list-tit .switch{background-color: #dce3ea;/*position:absolute;right:0;top:0;*/padding:0 25px 0 16px;font-size: 13px;color:#00bd9c;cursor:pointer;float:right;*margin-top:-45px;}
+.launch-list-tit .switch i{background:url(../images/launch/launch-show.png);width: 12px;height: 12px;*height: 16px;margin-right: 5px;display:inline-block;}
+.launch-list{overflow: hidden; border:4px solid #eaeef1;border-top:none;margin-bottom: 14px;margin-top:-10px;}
+.launch-hd-tit{background-color:#eaeef1;color:#333;height: 45px;line-height: 45px;margin-bottom: 10px;text-align:center;font-size: 14px;}
+.close_bg{background-color:#3d4855;color:#fff;}
+.launch-hd-tit h2{float:left;width: 76%;padding-left:14%;}
+.launch-hd-tit span{float:left;width: 11%;color:#748599;padding:0 16px;font-size: 13px;background-color:#2e3741;display:none;}
+.launch-hd-tit .switch{background-color: #dce3ea;float:right;padding:0 25px 0 16px;font-size: 13px;color:#00bd9c;cursor:pointer;}
+.launch-hd-tit .switch i{background:url(../images/launch/launch-show.png);width: 12px;height: 12px;margin-right: 5px;float:left;margin-top: 16px;}
+.launch-list-hd{padding-top:35px;height: 40px;line-height: 40px;border-bottom:2px solid #eaeef1;margin:0 17px;font-size: 15px;padding-left: 120px;}
+.launch-list-hd li{width: 140px;float:left;text-align:center;}
+.launch-list-hd li.tab{height: 37px;line-height: 37px;border:3px solid #eaeef1;border-bottom:none;margin-right: 12px;background-color: #eaeef1;color:#00bd9c;cursor:pointer;}
+.launch-list-hd li.selected{background-color: #fff;color:#999;}
+.wait-approval{width:297px;height: 50px;line-height: 50px;font-size: 16px;}
+.approval-arg{padding-top: 10px;}
+.approval-arg a{color:#00bd9c;}
+.approval-time{color:#f00;}
+/*通过一个类来控制开关*/
+.close_bg span{float:left;display:inline-block}
+.close_bg h2{width: 76%;padding:0;}
+.close_bg .switch{background-color:#2e3741;}
+.close_bg .switch i{background-position:0 -21px;*background-position:0 -26px;*height:3px;*margin-bottom:6px;}
+/*间距类*/
+.mb10{margin-bottom:10px;}
+.pt20{padding-top: 20px;}
+
+.float_top{
+   position: fixed;
+   top: 0;
+   z-index: 1;
+   background: #fff;
+   width: 960px;
+   border-bottom: 1px solid #000;
+}
+
+
+
+.launch-list-tit .tips{width:200px;height:42px;float:left}
