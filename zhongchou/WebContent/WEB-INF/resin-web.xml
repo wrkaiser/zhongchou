@@ -1,0 +1,17 @@
+ <web-app xmlns="http://caucho.com/ns/resin"
+         xmlns:resin="http://caucho.com/ns/resin/core">
+<character-encoding>UTF-8</character-encoding>
+ 
+   <database>
+    <jndi-name>jdbc/zhongchou</jndi-name>
+    <driver type="com.mysql.jdbc.Driver">
+   <url>jdbc:mysql://localhost:3306/zhongchou?useUnicode=true&amp;characterEncoding=utf-8&amp;characterSetResults=utf-8</url>
+   <user>root</user>
+   <password>123+</password>
+  </driver>
+  <prepared-statement-cache-size>8</prepared-statement-cache-size>
+  <max-connections>200</max-connections>
+  <max-idle-time>30s</max-idle-time>
+   </database>
+</web-app>
+

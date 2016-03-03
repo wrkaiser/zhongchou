@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN" "http://struts.apache.org/dtds/struts-config_1_3.dtd">
+
+<struts-config>
+  <form-beans >
+    
+  </form-beans>
+
+     <global-exceptions>
+		<!--
+			sample exception handler <exception key="expired.password"
+			type="app.ExpiredPasswordException" path="/changePassword.jsp"/> end
+			sample
+		-->
+		<exception key="user.error" type="java.lang.Exception"   handler="com.xiaoyou.exception.SysExceptionHandler" path="/error.jsp"></exception>
+	</global-exceptions>
+	<global-forwards>
+		<!-- Default forward to "Welcome" action -->
+		<!-- Demonstrates using index.jsp to forward -->
+	</global-forwards>
+  <action-mappings>
+      <action
+      scope="request"
+      parameter="m"
+      path="/deal"
+      type="com.xiaoyou.action.DealAction">
+      <forward name="list" path="/pros.jsp"></forward>
+      <forward name="allpros" path="/allpros.jsp"></forward>
+      <forward name="successed" path="/successed.jsp"></forward>
+       <forward name="willstart" path="/willstart.jsp"></forward>
+       <forward name="prodetail" path="/prodetail.jsp"></forward>
+       <forward name="login"  path="/log.jsp"></forward>
+       <forward name="about"  path="/about.jsp"></forward>
+    </action>
+      <action
+      scope="request"
+      parameter="m"
+      path="/index"
+      type="com.xiaoyou.action.IndexAction">
+      <forward name="index" path="/index.jsp"></forward>
+    </action>
+     <!-- 咨询action -->
+</action-mappings>
+  <message-resources parameter="ApplicationResources" />
+</struts-config>
+
